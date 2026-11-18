@@ -1,0 +1,4 @@
+"model","elasticity","se_clustered"
+"(1) No controls",-1.507,0.074
+"(2) + brand fixed effects",-2.916,0.06
+"(3) + store & week FE, feature, deal",-3.211,0.046

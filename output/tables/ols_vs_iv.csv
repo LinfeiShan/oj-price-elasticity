@@ -1,0 +1,3 @@
+"estimate","elasticity","se"
+"OLS, store & week FE",-3.211,0.046
+"IV (Hausman instrument)",-3.581,0.056

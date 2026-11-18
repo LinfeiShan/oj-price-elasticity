@@ -1,0 +1,103 @@
+Observations: 106139 | stores: 83 | brands: 11 | weeks: 40 - 160 
+
+== Descriptives by brand ==
+                  brand avg_price_per_64oz_usd avg_weekly_units_per_store
+ Tropicana Premium 64oz                   2.87                      13864
+ Tropicana Premium 96oz                   3.12                       7457
+ Florida's Natural 64oz                   2.86                       3247
+         Tropicana 64oz                   2.27                      16860
+       Minute Maid 64oz                   2.24                      18238
+       Minute Maid 96oz                   2.68                       4477
+       Citrus Hill 64oz                   2.32                       5505
+        Tree Fresh 64oz                   2.18                       2713
+      Florida Gold 64oz                   2.07                       3395
+        Dominick's 64oz                   1.74                      19835
+       Dominick's 128oz                   1.83                       8088
+ avg_feature_share
+             0.159
+             0.124
+             0.142
+             0.330
+             0.270
+             0.201
+             0.133
+             0.099
+             0.152
+             0.257
+             0.157
+
+== Pooled own-price elasticity ==
+                                model elasticity se_clustered
+                      (1) No controls     -1.507        0.074
+            (2) + brand fixed effects     -2.916        0.060
+ (3) + store & week FE, feature, deal     -3.211        0.046
+
+Model (3) feature & deal coefficients (clustered SEs):
+             Estimate  Std. Error   t value  Pr(>|t|)
+log_price -3.21105033 0.046385280 -69.22563 0.0000000
+feat       0.73206947 0.010709128  68.35939 0.0000000
+deal       0.01001092 0.007485645   1.33735 0.1811114
+
+== Brand-specific own-price elasticities (store & week FE, clustered SEs) ==
+                  brand elasticity    se ci_low ci_high lerner_markup
+         Tropicana 64oz     -3.898 0.064 -4.023  -3.773         0.257
+      Florida Gold 64oz     -3.797 0.123 -4.039  -3.556         0.263
+       Minute Maid 64oz     -3.484 0.063 -3.607  -3.362         0.287
+       Citrus Hill 64oz     -3.369 0.086 -3.537  -3.201         0.297
+        Dominick's 64oz     -3.367 0.050 -3.464  -3.269         0.297
+ Florida's Natural 64oz     -3.140 0.106 -3.349  -2.932         0.318
+       Minute Maid 96oz     -3.034 0.106 -3.242  -2.826         0.330
+ Tropicana Premium 64oz     -2.872 0.073 -3.016  -2.728         0.348
+        Tree Fresh 64oz     -2.567 0.109 -2.779  -2.354         0.390
+ Tropicana Premium 96oz     -2.340 0.198 -2.729  -1.952         0.427
+       Dominick's 128oz     -1.894 0.100 -2.089  -1.699         0.528
+ avg_price_per_64oz_usd
+                   2.27
+                   2.07
+                   2.24
+                   2.32
+                   1.74
+                   2.86
+                   2.68
+                   2.87
+                   2.18
+                   3.12
+                   1.83
+
+== Price x feature advertising (log price centred) ==
+                   Estimate Std. Error   t value      Pr(>|t|)
+log_price_c      -2.9744923 0.04603770 -64.60992  0.000000e+00
+feat              0.6343478 0.01028364  61.68515  0.000000e+00
+log_price_c:feat -0.8908980 0.02786879 -31.96759 3.580198e-223
+Elasticity when not featured: -2.97 | when fully featured: -3.87 
+
+== Price x store income (income standardised: 1 = one SD above mean) ==
+                     Estimate Std. Error   t value    Pr(>|t|)
+log_price          -3.1969302 0.05563406 -57.46354 0.00000e+00
+log_price:income_z  0.4421345 0.06831508   6.47199 9.71408e-11
+
+== Cross-price elasticity matrix (rows: whose sales; cols: whose price) ==
+                          Price of Tropicana 64oz Price of Minute Maid 64oz
+Sales of Tropicana 64oz                     -3.29                      1.03
+Sales of Minute Maid 64oz                    0.77                     -3.04
+Sales of Dominick's 64oz                     0.94                      0.43
+                          Price of Dominick's 64oz
+Sales of Tropicana 64oz                       0.35
+Sales of Minute Maid 64oz                     0.66
+Sales of Dominick's 64oz                     -3.01
+Clustered SEs:
+                          Price of Tropicana 64oz Price of Minute Maid 64oz
+Sales of Tropicana 64oz                      0.07                      0.06
+Sales of Minute Maid 64oz                    0.05                      0.08
+Sales of Dominick's 64oz                     0.07                      0.06
+                          Price of Dominick's 64oz
+Sales of Tropicana 64oz                       0.05
+Sales of Minute Maid 64oz                     0.05
+Sales of Dominick's 64oz                      0.05
+
+== IV estimate (Hausman instrument) ==
+    Estimate   Std. Error      t value     Pr(>|t|) 
+ -3.58080595   0.05600796 -63.93387785   0.00000000 
+First-stage t-statistic on instrument: 75.5 (F = 5707 ; >10 means a strong instrument)
+
+Done. Tables in output/tables, figures in output/figures.
